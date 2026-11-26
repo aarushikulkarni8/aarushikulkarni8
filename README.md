@@ -14,9 +14,12 @@ I enjoy building practical, user-focused software, and I'm interested in enterpr
 
 ## Technical Skillset
 
-**Programming languages**
+**Programming & web languages**
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 ![Python](https://img.shields.io/badge/Python-316192?style=for-the-badge&logo=python&logoColor=ffdd54)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-c2461f?style=for-the-badge&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css&logoColor=white)
 
 **Enterprise IT & service management**
 ![ITIL](https://img.shields.io/badge/ITIL-1f425f?style=for-the-badge)
