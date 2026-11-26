@@ -1,0 +1,35 @@
+name: Docs
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: false
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+
+      - name: README exists and its images load
+        run: |
+          set -u
+          test -s README.md || { echo "::error::README.md is missing or empty"; exit 1; }
+          failed=0
+          for url in $(grep -oE '(src(set)?="|\]\()https://[^")]+' README.md | sed -E 's/^(src(set)?="|\]\()//' | sort -u); do
+            if curl -fsSL --retry 3 --retry-all-errors --max-time 60 -o /dev/null "$url"; then
+              echo "ok $url"
+            else
+              echo "::error::Image does not load: $url"; failed=1
+            fi
+          done
+          exit $failed
